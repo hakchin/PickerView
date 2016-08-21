@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var pvwImage: UIPickerView!
+    @IBOutlet weak var lblImageFileName: UILabel!
+    @IBOutlet weak var ivwImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
