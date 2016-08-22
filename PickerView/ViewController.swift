@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var pvwImage: UIPickerView!
     @IBOutlet weak var lblImageFileName: UILabel!
     @IBOutlet weak var ivwImageView: UIImageView!
