@@ -28,11 +28,18 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     }
     
     // returns the number of 'columns' to display.
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int { return imageFileName.count
+    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int { return PICKER_VIEW_COLUMN
+    }
+    
+    // returns the # of row in each component..
+    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int { return imageFileName.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return imageFileName[row]
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        lblImageFileName.text = imageFileName[row]
     }
 
 }
