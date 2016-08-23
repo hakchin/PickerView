@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate {
     let MAX_ARRAY_NUM = 10
     let PICKER_VIEW_COLUMN = 1
+    var imageArray = [UIImage]()
     var imageFileName = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"]
     
     @IBOutlet weak var pvwImage: UIPickerView!
@@ -20,6 +21,12 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        for i in 0 ..< MAX_ARRAY_NUM {
+            let image = UIImage(named: imageFileName[i])
+            imageArray.append(image!)
+        }
+        lblImageFileName.text = imageFileName[0]
+        ivwImageView.image = imageArray[0]
     }
 
     override func didReceiveMemoryWarning() {
