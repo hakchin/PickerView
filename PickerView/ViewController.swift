@@ -42,9 +42,17 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int { return imageFileName.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return imageFileName[row]
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return imageFileName[row]
+//    }
+
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let imageView = UIImageView(image: imageArray[row])
+        imageView.frame = CGRectMake(0, 0, 100, 150)
+        return imageView
     }
+    
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         lblImageFileName.text = imageFileName[row]
         ivwImageView.image = imageArray[row]
