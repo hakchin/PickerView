@@ -58,7 +58,6 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         return imageView
     }
     
-    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         lblImageFileName.text = imageFileName[row]
         ivwImageView.image = imageArray[row]
